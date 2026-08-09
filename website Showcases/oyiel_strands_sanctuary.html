@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123b28">
+<title>OYIEL — Strands Sanctuary | Coconut Oil</title>
+<style>
+  :root{
+    --cream:#fff8df;
+    --cream2:#f5e4ad;
+    --gold:#c69227;
+    --gold2:#f0c75e;
+    --deep:#123b28;
+    --deep2:#071d14;
+    --brown:#6e321e;
+    --red:#a92820;
+    --shadow:0 20px 60px rgba(22,12,4,.28);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    color:#18251d;
+    font-family:Georgia,"Times New Roman",serif;
+    background:
+      radial-gradient(circle at 15% 15%,rgba(255,255,255,.4),transparent 18%),
+      linear-gradient(135deg,#183c28,#5d4a20 48%,#183b28);
+    min-height:100vh;
+  }
+  a{text-decoration:none;color:inherit}
+  button{font:inherit}
+  .page{
+    width:min(1120px,calc(100% - 24px));
+    margin:24px auto;
+    overflow:hidden;
+    border:4px solid #8c641d;
+    border-radius:34px;
+    background:var(--cream);
+    box-shadow:var(--shadow);
+    position:relative;
+  }
+  .page:before{
+    content:"";
+    position:absolute;inset:8px;
+    border:2px solid rgba(198,146,39,.8);
+    border-radius:25px;
+    pointer-events:none;z-index:5;
+  }
+  .hero{
+    position:relative;
+    padding:38px 42px 30px;
+    text-align:center;
+    background:
+      radial-gradient(circle at 50% 8%,#fffdf0 0,#f8edc9 45%,#ead39a 100%);
+  }
+  .hero:after{
+    content:"";
+    position:absolute;left:0;right:0;bottom:0;height:22px;
+    background:linear-gradient(90deg,transparent,#b98628,transparent);
+    opacity:.35;
+  }
+  .leaf{
+    position:absolute;color:#28613b;font-size:90px;line-height:1;opacity:.9;
+  }
+  .leaf.left{left:-18px;top:35px;transform:rotate(-25deg)}
+  .leaf.right{right:-18px;top:45px;transform:rotate(25deg)}
+  .flower{position:absolute;font-size:70px;filter:drop-shadow(0 6px 5px #70421a55)}
+  .flower.l1{left:10px;top:135px}.flower.l2{right:4px;top:150px}
+  .flower.l3{left:35px;bottom:10px}.flower.l4{right:35px;bottom:5px}
+  .brand-mark{
+    width:116px;height:116px;margin:0 auto 8px;border:4px solid var(--gold);
+    border-radius:50%;display:grid;place-items:center;
+    background:linear-gradient(145deg,#fff8df,#e8c76e);
+    box-shadow:inset 0 0 0 6px #fff4c6,0 8px 20px #70421a30;
+    font-size:53px;
+  }
+  .brand{
+    margin:0;font-size:clamp(52px,9vw,100px);letter-spacing:.16em;
+    color:#b87927;text-shadow:1px 1px #fff,3px 4px 0 #8e5520;
+    font-weight:500;
+  }
+  .tagline{
+    margin:4px auto 18px;max-width:600px;
+    letter-spacing:.38em;font:700 15px Arial,sans-serif;color:var(--deep);
+  }
+  .rule{height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);max-width:520px;margin:auto}
+  .title{
+    margin:18px 0 12px;font:bold clamp(40px,7vw,76px)/1 Arial,sans-serif;
+    letter-spacing:.02em;color:#143a28;
+    text-shadow:2px 3px #b88b37;
+  }
+  .pill{
+    display:inline-block;padding:13px 28px;border-radius:28px;
+    background:linear-gradient(#e9ba45,#b87818);color:#16120a;
+    font:bold 16px Arial,sans-serif;letter-spacing:.12em;
+    box-shadow:inset 0 2px #ffe9a4,0 5px 10px #70421a33;
+  }
+  .content{
+    display:grid;grid-template-columns:1fr 1fr;gap:26px;
+    padding:34px 48px;
+    background:linear-gradient(180deg,#fff9e8,#f6e8bc);
+  }
+  .visual{
+    min-height:390px;display:flex;align-items:center;justify-content:center;position:relative;
+  }
+  .coconut{
+    width:min(380px,85vw);aspect-ratio:1/1;border-radius:50%;
+    background:radial-gradient(circle at 52% 46%,#fffdf3 0 42%,#d8bda0 43% 47%,#63351f 48% 63%,#3b2117 64% 72%,#5b321e 73%);
+    box-shadow:inset 0 0 35px #1b0b0555,0 18px 35px #40201244;
+    position:relative;
+  }
+  .coconut:after{
+    content:"";position:absolute;width:42%;height:14%;
+    background:linear-gradient(90deg,#e5b83e,#fff0a2,#c99022);
+    border-radius:50%;left:32%;bottom:13%;
+    box-shadow:0 12px 14px #8e5b1833;
+  }
+  .oil-bowl{
+    position:absolute;bottom:4%;right:3%;width:165px;height:75px;
+    border-radius:50%;background:radial-gradient(ellipse,#ffd85c,#a86b16 70%);
+    border:8px solid #8c5718;box-shadow:0 10px 20px #32170d55;
+  }
+  .pour{
+    position:absolute;right:30%;bottom:19%;width:20px;height:130px;
+    background:linear-gradient(90deg,#b77b20,#ffe17c,#a86b16);border-radius:50%;
+    transform:rotate(14deg);filter:drop-shadow(4px 3px 4px #54300b55);
+  }
+  .benefits h2{font:bold 30px Arial,sans-serif;color:var(--deep);margin:5px 0 18px}
+  .benefit{
+    display:flex;align-items:center;gap:17px;padding:14px 0;
+    border-bottom:1px solid #b99043;
+  }
+  .icon{
+    flex:0 0 66px;height:66px;border-radius:50%;display:grid;place-items:center;
+    color:#f9e3a0;font-size:30px;background:linear-gradient(145deg,#9c651b,#3f2515);
+    border:3px solid #d9a93c;box-shadow:inset 0 0 0 3px #704317;
+  }
+  .benefit strong{display:block;font:bold 19px Arial,sans-serif;color:#173b29}
+  .benefit span{font:14px Arial,sans-serif;color:#6c4928}
+  .herbs{
+    padding:0 48px 34px;background:#f6e8bc;
+  }
+  .panel{
+    border:3px solid #a97624;border-radius:20px;
+    background:linear-gradient(135deg,#fff9e5,#edd69a);
+    padding:22px;box-shadow:0 8px 18px #5c351e22;
+  }
+  .panel h2{
+    color:var(--red);font:bold 30px Arial,sans-serif;text-align:center;margin:0 0 16px;
+  }
+  .herb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .herb{padding:14px;border-radius:14px;background:#fff9e8;border:1px solid #d1a54c}
+  .herb b{display:block;color:#7e321f;font:700 16px Arial,sans-serif;margin-bottom:5px}
+  .herb p{margin:0;font:13px/1.45 Arial,sans-serif}
+  .notice{
+    margin:20px auto 0;width:max-content;max-width:100%;padding:12px 22px;
+    border:3px solid #b77d20;border-radius:14px;background:#fff0b5;
+    font:bold 19px Arial,sans-serif;text-align:center;
+  }
+  .footer{
+    background:linear-gradient(135deg,#092619,#163d2a);
+    color:#fff5c9;padding:22px 38px;display:flex;align-items:center;gap:15px;justify-content:space-between;
+    flex-wrap:wrap;
+  }
+  .social{display:flex;gap:10px;flex-wrap:wrap}
+  .wa{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    padding:14px 19px;border-radius:30px;background:#25D366;color:white;
+    font:bold 15px Arial,sans-serif;box-shadow:0 6px 15px #0004;
+    transition:.2s transform,.2s filter;
+  }
+  .wa:hover{transform:translateY(-2px);filter:brightness(1.08)}
+  .small{font:13px Arial,sans-serif;opacity:.9}
+  .float{
+    position:fixed;right:20px;bottom:20px;z-index:20;
+    width:62px;height:62px;border-radius:50%;background:#25D366;color:white;
+    display:grid;place-items:center;font:700 30px Arial,sans-serif;
+    box-shadow:0 8px 25px #0005;border:3px solid white;
+  }
+  @media(max-width:760px){
+    .page{width:calc(100% - 10px);margin:5px;border-radius:22px}
+    .hero{padding:28px 18px 25px}.content{grid-template-columns:1fr;padding:25px 20px}
+    .herbs{padding:0 20px 25px}.herb-grid{grid-template-columns:1fr}
+    .leaf{font-size:55px}.flower{font-size:45px}
+    .brand{letter-spacing:.08em}.title{font-size:42px}
+    .footer{padding:20px;justify-content:center;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<main class="page">
+  <section class="hero">
+    <div class="leaf left">🌿</div><div class="leaf right">🌿</div>
+    <div class="flower l1">🌺</div><div class="flower l2">🌺</div>
+    <div class="flower l3">🌺</div><div class="flower l4">🌺</div>
+
+    <div class="brand-mark">🌿</div>
+    <h1 class="brand">OYIEL</h1>
+    <div class="tagline">STRANDS SANCTUARY</div>
+    <div class="rule"></div>
+    <h2 class="title">COCONUT OIL</h2>
+    <div class="pill">100% PURE &nbsp;|&nbsp; COLD PRESSED</div>
+  </section>
+
+  <section class="content">
+    <div class="visual">
+      <div class="coconut"></div>
+      <div class="pour"></div>
+      <div class="oil-bowl"></div>
+    </div>
+
+    <div class="benefits">
+      <h2>Natural Care for Your Strands</h2>
+      <a class="benefit" href="https://wa.me/2349049498961">
+        <div class="icon">🌿</div><div><strong>NOURISHES HAIR</strong><span>Plant-powered nourishment for your hair.</span></div>
+      </a>
+      <a class="benefit" href="https://wa.me/2349049498961">
+        <div class="icon">〽</div><div><strong>STRENGTHENS STRANDS</strong><span>Supports stronger-looking, healthier strands.</span></div>
+      </a>
+      <a class="benefit" href="https://wa.me/2349049498961">
+        <div class="icon">💧</div><div><strong>SOFTENS SKIN</strong><span>A rich oil for a smooth, cared-for feel.</span></div>
+      </a>
+      <a class="benefit" href="https://wa.me/2349049498961">
+        <div class="icon">✦</div><div><strong>NATURAL CARE</strong><span>Simple, botanical-inspired hair and skin care.</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="herbs">
+    <div class="panel">
+      <h2>THE AYURVEDIC HERB BLEND</h2>
+      <div class="herb-grid">
+        <div class="herb"><b>BHRINGRAJ</b><p>The King of Hair; revitalizes follicles.</p></div>
+        <div class="herb"><b>BRAHMI</b><p>Calmness and botanical care.</p></div>
+        <div class="herb"><b>AMLA</b><p>An infusion of 10 plus other herbs.</p></div>
+      </div>
+      <div class="notice">SHAKE BEFORE USE</div>
+      <div style="text-align:center;margin-top:16px;color:#70451e;font:bold 14px Arial,sans-serif;letter-spacing:.18em">NATURE'S TOUCH</div>
+      <div style="text-align:center;margin-top:12px;font:bold 18px Arial,sans-serif;color:#7d321f">MAX GROWTH. MAX RETENTION.</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <strong style="font:700 20px Georgia,serif">OYIEL • STRANDS SANCTUARY</strong>
+      <div class="small">100% Pure • Cold Pressed • Natural Care</div>
+    </div>
+    <div class="social">
+      <a class="wa" href="https://wa.me/2349049498961" target="_blank" rel="noopener">☘ WhatsApp • +234 904 949 8961</a>
+      <a class="wa" href="https://wa.me/2349049498961" target="_blank" rel="noopener">ORDER / ENQUIRE</a>
+    </div>
+  </footer>
+</main>
+
+<a class="float" href="https://wa.me/2349049498961" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">☘</a>
+
+<script>
+  // Every interactive link on the page is intentionally routed to WhatsApp.
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      // WhatsApp destination is already encoded in each href.
+    });
+  });
+</script>
+</body>
+</html>
