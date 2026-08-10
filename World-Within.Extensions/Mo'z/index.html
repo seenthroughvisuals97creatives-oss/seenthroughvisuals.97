@@ -311,7 +311,7 @@ const bookingMessage =
 
 const whatsapp = document.getElementById("whatsappBtn");
 if (/^234\d{10}$/.test(WHATSAPP_NUMBER)) {
-  whatsapp.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(bookingMessage);
+  whatsapp.href = "https://wa.me/2349056087306" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(bookingMessage);
 } else {
   whatsapp.addEventListener("click", (e) => {
     e.preventDefault();
